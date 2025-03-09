@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Форма регистрации</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+<h2 class="zav">Заявка на продвижение сайта</h2>
+<p>Ваш сайт</p>
+<input type="text" id="" name="" placeholder="" required><br/>
+<form action="/submit_form" method="post">
+    <h2 class="intres">Интересуемые услуги</h2><br/>
+<input type="checkbox" id="seo" name="service_seo">
+<label for="seo">Продвижение сайтов</label><br/>
+<input type="checkbox" id="context_advertising" name="service_context_advertising">
+<label for="context_advertising">Контекстная реклама</label><br/>
+<input type="checkbox" id="seo" name="service_seo">
+<label for="seo">Создание сайтов</label><br/>
+
+<input type="checkbox" id="context_advertising" name="service_context_advertising">
+<label for="context_advertising">Веб-аналитика</label><br/>
+<input type="checkbox" id="seo" name="service_seo">
+<label for="seo">Продвижение в социальных сетях</label><br/>
+
+<input type="checkbox" id="context_advertising" name="service_context_advertising">
+<label for="context_advertising">Медийная реклама</label><br/>
+<br>
+<label for="budget">Бюджет/месяц:</label><br>
+<input type="number" id="budget" name="budget" value="30000" required> рублей<br/>
+
+<!-- Другие поля формы (электронная почта, телефон, бюджет и ваше имя) -->
+<input class="otstup" type="text" id="name" name="name" placeholder="Ваше имя" required><br/>
+<input type="email" id="email" name="email" placeholder="Электронная почта" required><br/>
+<input type="tel" id="phone" name="phone" placeholder="Телефон" required><br/>
+
+
+
+<button type="submit" class="submit-button">Отправить</button>
+</form>
+</div>
+
+</body>
+</html>

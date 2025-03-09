@@ -1,0 +1,15 @@
+.flex {
+    display: flex
+}
+
+.fd-row {
+    flex-direction: row;
+}
+
+.fd-column {
+    flex-direction: column;
+}
+
+.w100 {
+    width: 100%;
+}

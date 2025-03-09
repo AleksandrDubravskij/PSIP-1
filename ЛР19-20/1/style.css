@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; }
+#catalog, #cart { margin: 20px; padding: 10px; border: 1px solid #333; }
+.product { margin-bottom: 10px; }
+button { padding: 5px 10px; cursor: pointer; }

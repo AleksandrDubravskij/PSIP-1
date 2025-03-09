@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        canvas { background: #ffffff; display: block; margin: 0 auto; }
+    </style>
+     <style>
+        body {
+           
+            background-image: url('background.jpg');  /* Путь к твоему изображению */
+            background-size: 100%;  /* Масштабируем, чтобы покрыть весь экран */
+            background-repeat: no-repeat;  /* Избегаем повторения картинки */
+            background-position: center;  /* Центрируем фон */
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Собери монетки и будешь богатым "Но это не точно"</h1>
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
+    <script src="game.js"></script>
+</body>
+</html>

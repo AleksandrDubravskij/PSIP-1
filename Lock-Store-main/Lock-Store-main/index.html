@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="maincss.css">
+    <script src="main.js" async></script>
+    <title>Магазин замков </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Подключаем Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Подключаем Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</head>
+</head>
+<body>
+    <div id="draggable" draggable="true">Перетащи меня</div>
+    <div id="dropzone">Сбрось сюда</div>
+    <div class="rek">
+        <div class="rek-text">
+            Скидка 10% по промокоду “ZAMOK” на все заказы до 10.09
+        </div>
+        <a class="rek1" href="#">Обратный звонок</a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="Картинки/Логотип.png" alt="Логотип" width="65">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Главная</a>
+                </li>
+                  <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="catalogDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Каталог
+                </a>
+                <div class="dropdown-menu" aria-labelledby="catalogDropdown">
+                    <a class="dropdown-item" href="#">Подкатегория 1</a>
+                    <a class="dropdown-item" href="#">Подкатегория 2</a>
+                    <a class="dropdown-item" href="#">Подкатегория 3</a>
+                </div>
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Оптовая продажа</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">О нас</a>
+                </li>
+            </ul>
+            <div class="contact d-flex align-items-center">
+                <img src="Картинки/Icon2.png" alt="Иконка 2">
+                <span>+7 (495) 660-88-99</span>
+                <img class="ml-2" src="Картинки/Icon.png" alt="Иконка 1">
+                <img class="ml-2" src="Картинки/Icon1.png" alt="Иконка 1">
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>  
+    <div class="slider-container">
+        <div id="slider1" class="slider">
+            <div class="slide"><img src="Картинки/Icon13.png" alt="Slide 1"></div>
+            <div class="slide"><img src="Картинки/Icon13.png" alt="Slide 2"></div>
+            <div class="slide"><img src="Картинки/Icon13.png" alt="Slide 3"></div>
+        </div>
+        <div class="navigation-buttons">
+            <button class="arrow left" onclick="prevSlide1()">&lt;</button>
+            <button class="dot dot1 active" onclick="goToSlide1(0)"></button>
+            <button class="dot dot1" onclick="goToSlide1(1)"></button>
+            <button class="dot dot1" onclick="goToSlide1(2)"></button>
+            <button class="arrow right" onclick="nextSlide1()">&gt;</button>
+        </div>
+    </div>
+    <div class="statistics-container owl-carousel">
+        <div class="stat-box">
+            <div class="stat-number">5,597</div>
+            <div class="stat-text">Счастливых клиентов</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">1,245</div>
+            <div class="stat-text">Продуктов на выбор</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">372</div>
+            <div class="stat-text">Продаж в день</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">20</div>
+            <div class="stat-text">Лет на рынке</div>
+        </div>
+    </div>
+ 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                nav: false, // Отключаем навигационные кнопки
+                dots: false, // Отключаем индикаторы
+                autoplay: true,
+                autoplayTimeout: 2000, // 3 секунды
+                autoplayHoverPause: true, // Остановка при наведении
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
+        <div class="zag">
+             <h1>Почему GoldenService?</h1>
+        </div>
+        <div class="three-blocks-container">
+            <div class="block">
+                <img src="Картинки/Icon3.png" alt="Иконка 1" width="30%" >
+                Возврат удвоенной стоимости каждого замка в случае брака. </div>
+            <div class="block">
+                <img src="Картинки/Icon11.png" alt="Иконка 1" width="30%" >Наносим ваш логотип компании на наш продукт</div>
+            <div class="block">
+                <img src="Картинки/Icon3.png" alt="Иконка 1" width="30%" >Возврат удвоенной стоимости каждого замка в случае брака. </div>
+            </div>
+        <div class="zag1">
+            <h1>Категории</h1>
+        </div>
+            
+            <div class="four-blocks-container1">
+                <div class="block">
+                    <p class="block-text">Для отелей</p>
+                    <button class="block-button">Перейти</button>
+                    <img src="Картинки/Icon4.png" alt="Иконка" class="block-image">
+                </div>
+                <div class="block">
+                    <p class="block-text">Для шкафчиков</p>
+                    <button class="block-button">Перейти</button>
+                    <img src="Картинки/Icon5.png" alt="Иконка" class="block-image"></div>
+                <div class="block">
+                    <p class="block-text">Для офисов</p>
+                    <button class="block-button">Перейти</button>
+                    <img src="Картинки/Icon6.png" alt="Иконка" class="block-image"></div>
+                <div class="block">
+                    <p class="block-text">Замки для дома</p>
+                    <button class="block-button">Перейти</button>
+                    <img src="Картинки/Icon7.png" alt="Иконка" class="block-image">
+                </div>
+                <div class="button1">
+                    <button class="block-button1">Все Категории</button>
+                </div>
+    </div>
+<div class="nach">
+    <h1>Наши популярные продукты</h1>
+</div>
+    <div class="slider-container">
+        <div id="slider2" class="slider">
+            <div class="slide"><img src="Картинки/Icon14.png" alt="Slide 1"></div>
+            <div class="slide"><img src="Картинки/Icon14.png" alt="Slide 2"></div>
+            <div class="slide"><img src="Картинки/Icon14.png" alt="Slide 3"></div>
+        </div>
+        <div class="navigation-buttons">
+            <button class="arrow left" onclick="prevSlide2()">&lt;</button>
+            <button class="dot dot2 active" onclick="goToSlide2(0)"></button>
+            <button class="dot dot2" onclick="goToSlide2(1)"></button>
+            <button class="dot dot2" onclick="goToSlide2(2)"></button>
+            <button class="arrow right" onclick="nextSlide2()">&gt;</button>
+        </div>
+    </div>
+    <div class="nach">
+        <h1>Где мы находимся</h1>
+    </div>
+    <div id="map"></div>
+    
+    <script>
+        $(document).ready(function() {
+            // Инициализация карты
+            var map = L.map('map').setView([53.667256294220806, 23.827714344513343], 13); // Координаты Москвы
+            
+            // Добавление слоя карты (например, OpenStreetMap)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+            }).addTo(map);
+            
+            // Добавление маркера на карту
+            L.marker([53.667256294220806, 23.827714344513343]).addTo(map)
+                .bindPopup(' Магазин замков')
+                .openPopup();
+        });
+    </script>
+    
+        <div class="form">
+            <h2>Мы Вам перезвоним</h2>
+            <p>Если у вас возникли какие-то вопросы или проблемы, заполните<br> форму и мы Вам перезвоним.</p>
+            <br>
+            <form action="/submit_form" method="post">
+                <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                <input type="email" id="email" name="email" placeholder="Ваш Email" required>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+</main>
+<button class="btn-top" title="На верх">Наверх</button>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <div class="logo">
+                <img src="Картинки/Логотип1.png" alt="Логотип" width="100">
+            </div>
+            <ul class="social-icons">
+                
+                <li><a href="#"><img src="Картинки/Icon8.png" alt="VK" width="20"></a></li>
+                <li><a href="#"><img src="Картинки/Icon9.png" alt="Twitter" width="20"></a></li>
+                <li><a href="#"><img src="Картинки/Icon10.png" alt="Facebook" width="10"></a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Навигация</h3>
+            <ul>
+                <li><a href="#" class="ss">Главная</a></li>
+                <li><a href="#" class="ss">Каталог</a></li>
+                <li><a href="#" class="ss">Оптовая продажа</a></li>
+                <li><a href="#" class="ss">О нас</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Наши Контакты</h3>
+            <ul>
+                <li>Телефоны</li>
+                <li><a href="#" class="ss">+7 (988) 565 00 38</a></li>
+                <li><a href="#" class="ss">+375 33 662 82 56</a></li>
+                <li><a href="#"></a>Email</li>
+                <li><a href="#" class="ss">vladpertcev@mail.ru</a></li>
+                <li><a href="#" class="ss">korobko416@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Наш Адрес</h3>
+            <ul>
+                <li>Россия,</li>
+                <li>Ростов-на-Дону ул.</li>
+                <li>Богачева, 16</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Информация</h3>
+            <ul>
+                <li><a href="#" class="ss">Доставка и оплата</a></li>
+                <li><a href="#" class="ss">Гарантии</a></li>
+                <li><a href="#" class="ss">Возврат товара</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="main.js"></script>
+<script src="OnTop.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</body>
+</html>

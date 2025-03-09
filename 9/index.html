@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p>
+        <h2>внедрение JS</h2>
+        <button onclick="document.body.style.backgroundColor='#'+(Math.random()*0xFFFFFF<<0).toString(16)">Click me</button>
+        <!-- внешний -->
+        <script src="script.js"></script>
+        <!-- внутренний -->
+        <script>
+            document.write('Hello, world!');
+        </script>
+        <!-- встроенный -->
+        <button onclick="showAlert()">Alert</button>
+        <a href="JavaScript:alert('Ура!')">Alert</a>
+
+        <button onclick="loadScript()">Load Script</button>
+        <script>
+            function loadScript() {
+                var script = document.createElement('script');
+                // импортируемый
+                script.src = 'script.js';
+                document.body.appendChild(script);
+            }
+        </script>
+    </p>
+
+
+<!-- if / else if / else -->
+    <p>
+        <h2>if / else if / else | положительное отрицательное</h2>
+        <input type="text" id="myInput">
+        <button onclick="neg_pos()">Получить значение</button>
+
+        <script>
+            function neg_pos() {
+                let num = parseInt(document.getElementById('myInput').value)
+                if (num > 0) {
+                    alert("Число положительное");
+                } else if (num < 0) {
+                    alert("Число отрицательное");
+                } else {
+                    alert("Число равно нулю");
+                }
+            }
+        </script>
+    </p>
+
+    <!-- switch -->
+    <p>
+        <h2>swtch | Какой день недели?</h2>
+        <input type="text" id="dayInput">
+        <button id="checkDayButton">Какой день недели?</button>
+        <script>
+            document.getElementById("checkDayButton").addEventListener("click", function() {
+                var day = parseInt(document.getElementById("dayInput").value);
+                switch (day) {
+                    case 1:
+                        alert("Понедельник");
+                        break;
+                    case 2:
+                        alert("Вторник");
+                        break;
+                    case 3:
+                        alert("Среда");
+                        break;
+                    case 4:
+                        alert("Четверг");
+                        break;
+                    case 5:
+                        alert("Пятница");
+                        break;
+                    case 6:
+                        alert("Суббота");
+                        break;
+                    case 7:
+                        alert("Воскресенье");
+                        break;
+                    default:
+                        alert("День недели неизвестен");
+                }
+            });
+        </script>
+    </p>
+    
+
+  
+
+    <!-- switch -->
+    <p>
+        <h2>while | Итерация от 0 до 5, сумма</h2>
+        <button onclick="calcSum()">нажми меня</button>
+        <p>            
+            <input type="text" id="input0" value="6">
+        </p>
+        <p>            
+            <input type="text" id="input1" value="-6">
+        </p>
+        <p>            
+            <input type="text" id="input2" value="3">
+        </p>
+        <p>            
+            <input type="text" id="input3" value="1">
+        </p>
+        <p>            
+            <input type="text" id="input4" value="-2">
+        </p>
+        <script>
+            function calcSum() {
+                let summa = 0;
+                var i = 0;
+                while (i<5) {
+                    summa += parseInt(document.getElementById("input" + i).value);
+                    i++;
+                }
+                alert("Сумма: " + summa);
+            }
+        </script>
+
+    </p>
+
+    <!-- do..while break continue return -->
+    <p>
+        <h2> do..while break continue return</h2>
+        <p>вывод четных чисел, пока не будет встречено 17</p>
+        <hr>
+        <button onclick="func()">click me</button>
+        <p>            
+            <input type="text" id="id0" value="6">
+        </p>
+        <p>            
+            <input type="text" id="id1" value="-6">
+        </p>
+        <p>            
+            <input type="text" id="id2" value="9">
+        </p>
+        <p>            
+            <input type="text" id="id3" value="12">
+        </p>
+        <p>            
+            <input type="text" id="id4" value="17">
+        </p>
+        <p>            
+            <input type="text" id="id5" value="12">
+        </p>
+        <p>            
+            <input type="text" id="id6" value="-2">
+        </p>
+        <script>
+            function func() {
+                alert(output())
+            }
+            function output() {
+                let i = 0;
+                let sequence = "";
+                let num;
+                do {
+                    num = parseInt(document.getElementById("id" + i).value);
+                    if (!num) {
+                        break;
+                    }
+                    if (parseInt(document.getElementById("id" + i).value) % 2 == 1) {
+                        i++
+                        continue;
+                    }
+                    sequence += num + " ";
+                    i++
+                } while (num != 17);
+                return sequence
+            }
+        </script>
+    </p>
+    <p>
+        <h2>prompt(), confirm()</h2>
+        <button onclick="userdata()">Познакомимся?</button>
+        <script>
+            function userdata() {
+                let name = prompt("Как вас зовут?")
+                let age = prompt("Сколько вам лет?")
+                if (confirm("Данные введены правильно?")) {
+                    alert("Приветствую, " + name)
+                }
+
+            }
+        </script>
+    </p>
+</body>
+</html>

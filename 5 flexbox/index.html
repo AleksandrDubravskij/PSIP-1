@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .h100 {
+            height: 100%;
+        }
+        .block {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .container {
+            height: 100vh;
+        }
+        .block {
+            outline: 1px solid black;
+        }
+        .fd-column {
+            flex-direction: column;
+        }
+        .fd-row {
+            flex-direction: row;
+        }
+        header,
+        footer {
+            height: 100px;
+        }
+        .aside {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container block fd-column">
+        <header class="block">1</header>
+        <div class="block fd-row h100">
+            <aside class="aside block">2</aside>
+            <main class="block fd-column">
+                <section class="h100 headersection block">4</section>
+                <div class="h100 block fd-row">
+                    <section class="block">5</section>
+                    <section class="block">6</section>
+                </div>
+                <div class="h100 block fd-row">
+                    <section class="block">7</section>
+                    <section class="block">8</section>
+                </div>
+                <div class="h100 block fd-row">
+                    <section class="block">9</section>
+                    <section class="block">10</section>
+                </div>
+            </main>
+            <aside class="aside block">3</aside>
+        </div>
+        <footer class="block">11</footer>
+    </div>
+</body>
+</html>

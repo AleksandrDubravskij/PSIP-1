@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с Local Storage</title>
+</head>
+<body>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="ФИО" required><br>
+        <input type="email" id="email" placeholder="Эл. почта" required><br>
+        <input type="date" id="birthdate" required><br>
+        <button type="button" onclick="saveToLocalStorage()">Сохранить в Local Storage</button>
+    </form>
+    <button onclick="getFromLocalStorage()">Показать данные</button>
+    <button onclick="clearLocalStorage()">Очистить Local Storage</button>
+    <div id="output"></div>
+
+    <script>
+        function saveToLocalStorage() {
+            localStorage.setItem('name', document.getElementById('name').value);
+            localStorage.setItem('email', document.getElementById('email').value);
+            localStorage.setItem('birthdate', document.getElementById('birthdate').value);
+            alert("Данные сохранены в Local Storage");
+        }
+
+        function getFromLocalStorage() {
+            const output = document.getElementById('output');
+            output.innerHTML = `ФИО: ${localStorage.getItem('name')}<br>
+                                Эл. почта: ${localStorage.getItem('email')}<br>
+                                Дата рождения: ${localStorage.getItem('birthdate')}`;
+        }
+
+        function clearLocalStorage() {
+            localStorage.clear();
+            alert("Local Storage очищен");
+        }
+    </script>
+</body>
+</html>

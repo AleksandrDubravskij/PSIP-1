@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            outline: 1px solid black;
+            outline-offset: -1px;
+            text-align: center;
+        }
+        .container {  
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+            "l1 l1 l1 l1"
+            "l2 l4 l4 l3"
+            "l2 l5 l6 l3"
+            "l2 l7 l8 l3"
+            "l2 l9 l10 l3"
+            "l11 l11 l11 l11";
+            height: 99vh;
+        }
+        
+        .l1 { grid-area: l1; }
+        
+        .l4 { grid-area: l4; }
+        
+        .l2 { grid-area: l2; }
+        
+        .l5 { grid-area: l5; }
+        
+        .l6 { grid-area: l6; }
+        
+        .l7 { grid-area: l7; }
+        
+        .l8 { grid-area: l8; }
+        
+        .l9 { grid-area: l9; }
+        
+        .l10 { grid-area: l10; }
+        
+        .l11 { grid-area: l11; }
+        
+        .l3 { grid-area: l3; }
+
+        @media (min-width: 500px) {
+            .container {                
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(11, 1fr);
+                grid-template-areas:
+                    "l1"
+                    "l4"
+                    "l5"
+                    "l6"
+                    "l7"
+                    "l8"
+                    "l9"
+                    "l10"
+                    "l2"
+                    "l3"
+                    "l11";
+                background-color: #7777ff;
+            }
+        }
+        @media (min-width: 750px) {
+            .container {                
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(8, 1fr);
+                grid-template-areas:
+                    "l1 l1"
+                    "l4 l4"
+                    "l5 l6"
+                    "l7 l8"
+                    "l9 l10"
+                    "l2 l2"
+                    "l3 l3"
+                    "l11 l11";
+                background-color: #77ff77;
+            }
+        }
+        @media (min-width: 1000px) {
+            .container {                
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                grid-template-areas:
+                "l1 l1 l1 l1"
+                "l2 l4 l4 l3"
+                "l2 l5 l6 l3"
+                "l2 l7 l8 l3"
+                "l2 l9 l10 l3"
+                "l11 l11 l11 l11";
+                background-color: #ff7777;
+            }
+        }
+    </style>
+</head>
+<body>    
+    <div class="container">
+        <div class="l1 block">1</div>
+        <div class="l4 block">4</div>
+        <div class="l2 block">2</div>
+        <div class="l5 block">5</div>
+        <div class="l6 block">6</div>
+        <div class="l7 block">7</div>
+        <div class="l8 block">8</div>
+        <div class="l9 block">9</div>
+        <div class="l10 block">10</div>
+        <div class="l11 block">11</div>
+        <div class="l3 block">3</div>
+    </div>
+</body>
+</html>

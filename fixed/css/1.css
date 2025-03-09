@@ -1,0 +1,39 @@
+
+* {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+div {
+    outline: 1px solid black;
+    outline-offset: -1px;
+}
+
+.flex {
+	display: flex;
+}
+
+/* columns */
+
+.height4of6 {
+	height: 720px;
+}
+
+.height1of6 {
+	height: 180px;
+}
+
+/* lines */
+
+.width6of6 {
+	width: 1920px;
+}
+
+.width2of6 {
+	width: 640px;
+}
+
+.width1of6 {
+	width: 320px;
+}

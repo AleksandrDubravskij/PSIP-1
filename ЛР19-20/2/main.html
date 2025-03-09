@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с Cookie</title>
+</head>
+<body>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="ФИО" required><br>
+        <input type="email" id="email" placeholder="Эл. почта" required><br>
+        <input type="date" id="birthdate" required><br>
+        <button type="button" onclick="saveToCookie()">Сохранить в Cookie</button>
+    </form>
+    <button onclick="getFromCookie()">Показать данные</button>
+    <button onclick="clearCookie()">Очистить Cookie</button>
+    <div id="output"></div>
+
+    <script>
+        function saveToCookie() {
+            document.cookie = `name=${document.getElementById('name').value};`;
+            document.cookie = `email=${document.getElementById('email').value};`;
+            document.cookie = `birthdate=${document.getElementById('birthdate').value};`;
+            alert("Данные сохранены в Cookie");
+        }
+
+        function getFromCookie() {
+            const output = document.getElementById('output');
+            output.innerHTML = document.cookie.split('; ').join('<br>');
+        }
+
+        function clearCookie() {
+            document.cookie = 'name=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+            document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+            document.cookie = 'birthdate=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+            alert("Cookie очищены");
+        }
+    </script>
+</body>
+</html>
